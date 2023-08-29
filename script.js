@@ -18,10 +18,12 @@ function makeGrid(num) {
     for (let i = 0; i < num; i++) {
         makeRow(num)
     }
+    colorSquare()
 }
 
 //This event (i.e. color square) fires when a square is hovered
-const squareSelected = document.querySelectorAll(".square");
+function colorSquare () {
+let squareSelected = document.querySelectorAll(".square");
 
  for (let i = 0; i < squareSelected.length; i++) {
      squareSelected[i].addEventListener("mouseover", function(e) {
@@ -29,8 +31,8 @@ const squareSelected = document.querySelectorAll(".square");
        console.log(e)
      });
  }
+}
 
- 
  function updateGrid() {
     let number = prompt("How many squares do you want per size?", '20')
     number = Number(number)
@@ -40,6 +42,7 @@ const squareSelected = document.querySelectorAll(".square");
     }
     else {}}
 
+    //Helper function for updateGrid()
 function removeGrid() {
     document.querySelectorAll('.row').forEach(e => e.remove());
     }
