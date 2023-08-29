@@ -20,3 +20,16 @@ function makeGrid(num) {
     }
 }
 
+//This event (i.e. color square) fires when a square is hovered
+const squareSelected = document.querySelectorAll(".square");
+console.log(squareSelected)
+
+ for (let i = 0; i < squareSelected.length; i++) {
+     squareSelected[i].addEventListener("mouseover", function(e) {
+       squareSelected[i].style.backgroundColor = 'Blue'
+       console.log(e)
+     });
+ }
+
+ 
+
