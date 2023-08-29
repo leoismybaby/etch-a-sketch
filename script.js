@@ -22,7 +22,6 @@ function makeGrid(num) {
 
 //This event (i.e. color square) fires when a square is hovered
 const squareSelected = document.querySelectorAll(".square");
-console.log(squareSelected)
 
  for (let i = 0; i < squareSelected.length; i++) {
      squareSelected[i].addEventListener("mouseover", function(e) {
@@ -32,4 +31,15 @@ console.log(squareSelected)
  }
 
  
+ function updateGrid() {
+    let number = prompt("How many squares do you want per size?", '20')
+    number = Number(number)
+    if (Number.isInteger(number) && number <= 100) {
+        removeGrid()
+        makeGrid(number)
+    }
+    else {}}
 
+function removeGrid() {
+    document.querySelectorAll('.row').forEach(e => e.remove());
+    }
