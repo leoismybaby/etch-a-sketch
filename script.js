@@ -27,7 +27,7 @@ let squareSelected = document.querySelectorAll(".square");
 
  for (let i = 0; i < squareSelected.length; i++) {
      squareSelected[i].addEventListener("mouseover", function(e) {
-       squareSelected[i].style.backgroundColor = 'Blue'
+       squareSelected[i].style.backgroundColor = getRandomColor()
        console.log(e)
      });
  }
@@ -46,3 +46,12 @@ let squareSelected = document.querySelectorAll(".square");
 function removeGrid() {
     document.querySelectorAll('.row').forEach(e => e.remove());
     }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
